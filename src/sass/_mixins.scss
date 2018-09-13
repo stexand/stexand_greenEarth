@@ -1,0 +1,41 @@
+@mixin bg-gradient{
+    background: -webkit-linear-gradient(90deg, #1f1f1f 0%, #1f1f1f 20%, rgba(31, 31, 31, 0) 40%, rgba(31, 31, 31, 0));
+}
+
+@mixin transition{
+    transition: all ease-in .5s;
+}
+@mixin darts {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $silver-color;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include transition;
+    &:hover{
+        cursor: pointer;
+        border-color: $primary-color;
+    }
+}
+
+@mixin sm-media{
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
+
+@mixin md-media{
+    @media screen and(max-width: 768px){
+        @content;
+    }
+}
+
+@mixin lg-media{
+    @media screen and(min-width: 769px) and (
+        max-width: 1171px) {
+            @content;
+        }
+    }
+
